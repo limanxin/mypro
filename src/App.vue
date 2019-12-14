@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    aa
-    <!-- <router-view></router-view> -->
+    <!-- 在根组件中只需要添加路由映射组件的展示区域 -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+
 export default {
 
 }
