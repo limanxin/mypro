@@ -2,11 +2,12 @@ import axios from 'axios'
 import { Toast } from 'vant'
 // 配置基准路径
 axios.defaults.baseURL = 'http://localhost:3000'
-
+localStorage.setItem('hm_baseURL', axios.defaults.baseURL)
 // ......
 // 添加请求拦截器
 // config:相当于当前的请求报文
 axios.interceptors.request.use(function (config) {
+  localStorage.setItem('hm_baseURL', axios.defaults.baseURL)
   console.log(config)
   // 在发送请求之前做些什么:获取token，判断是否成功的获取，如果有token则添加请求头的设置，否则不处理
   let token = localStorage.getItem('hm_token')
